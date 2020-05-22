@@ -11,9 +11,9 @@ pipeline {
                 bat "mvn test"
             }
         }
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                bat "mvn package"
+                bat "docker docker container run -it -d --name tomcatcontainer -p 8080:8080 image2"
             }
         }
     }
