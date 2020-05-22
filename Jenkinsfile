@@ -18,12 +18,12 @@ pipeline {
         }
         stage('Run') {
             steps {
-                bat "docker pull satinderthakur00/test:latest"
+                bat "docker build -t centos/tomcat ."
              }
         }
         stage('Run') {
             steps {
-                bat "docker container run -d -p 8080:8080 satinderthakur00/test"
+                bat "docker container run -d -p 8080:8080 tomcatcontainer1 centos/tomcat"
             }
         }
     }
