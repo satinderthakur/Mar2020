@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Container Run') {
             steps {
-                bat "docker container run -d -p 8080:8080 centos/tomcat"
+                bat "docker container run -d centos/tomcat"
             }
         }
     }
