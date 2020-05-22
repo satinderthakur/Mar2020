@@ -7,9 +7,9 @@ pipeline {
         
             }
         }
-        stage('Run') {
+        stage('Test') {
             steps {
-                bat "mvn package"
+                bat "mvn test"
             }
         }
         stage('Build Docker') {
