@@ -3,7 +3,7 @@ pipeline {
      stages {
         stage('Build') {
             steps {
-                bat "docker build -t myimage2 ."
+                bat "mvn clean"
             }
         }
         stage('Test') {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                bat "docker container run -it -d --name tomcatcontainer -p 8080:8080 image2"
+                bat "mvn package"
             }
         }
     }
