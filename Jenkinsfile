@@ -16,12 +16,12 @@ pipeline {
                 bat "mvn package"
             }
         }
-        stage('Run') {
+        stage('Build Docker') {
             steps {
                 bat "docker build -t centos/tomcat ."
              }
         }
-        stage('Run') {
+        stage('Container Run') {
             steps {
                 bat "docker container run -d -p 8080:8080 tomcatcontainer1 centos/tomcat"
             }
