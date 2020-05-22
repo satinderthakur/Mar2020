@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                bat "docker docker container run -it -d --name tomcatcontainer -p 8080:8080 image2"
+                bat "docker container run -it -d --name tomcatcontainer -p 8080:8080 image2"
             }
         }
     }
